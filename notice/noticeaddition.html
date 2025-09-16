@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>创建新通知</title>
+		<!-- 修改1：把href里的路径换成自己的 -->
+		<link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+		<style>
+			/* 为带有require类的元素添加红色星号前缀 */
+			.required::before {
+				/* 星号内容 */
+				content: "*";
+					/* 红色 */
+				color: #ff0000;
+				/* 与文字保持一点距离 */
+				margin-right: 4px;
+			/* 星号加粗 */
+				font-weight: bold;				
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset class="layui-elem-field layui-field-title">
+			<!-- 修改2：把“添加用户”换成自己的 -->
+			<legend style="font-weight: bold;">创建新通知</legend>
+		</fieldset>
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label required">通知对象:</label>
+				<div class="layui-input-block">
+					<input type="checkbox" name="intrest" lay-skin="primary" title="管理员" checked>
+					<input type="checkbox" name="intrest" lay-skin="primary" title="教师">
+					<input type="checkbox" name="intrest" lay-skin="primary" title="学生">
+				</div>
+			</div>
+				
+			<div class="layui-form-item">
+				<label class="layui-form-label required">通知等级:</label>
+				<div class="layui-input-block">
+					<input type="radio" name="notice" value="基础通知" title="基础通知" checked="">
+					<input type="radio" name="notice" value="次要通知" title="次要通知">
+					<input type="radio" name="notice" value="重要通知" title="重要通知">
+					<input type="radio" name="notice" value="紧急通知" title="紧急通知">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label required">通知内容：</label>
+				<div class="layui-input-block">
+					<textarea   name="remark" class="layui-textarea" placeholder="请输入通知内容"></textarea>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认添加</button>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../lib/layui-v2.6.3/layui.js">
+			
+		</script>
+		<script>
+			layui.use(['form', 'layer'], function() {
+				var form = layui.form; // 获得form模块
+				var layer = layui.layer; // 获得layer模块
+				$ = layui.$;
+				
+				$("#remark").blur(function() {
+						var remark = $("#remark").val();
+						var reg = /^[0-9]{2,}$/; //正则表达式
+						if (remark.length == 0 || remark == null || remark == '') {
+							layer.msg('通知内容不能为空', {icon: 0});
+					});
+				});
+			});
+				
+				layui.use(['form'], function() {
+					var form = layui.form;
+					  layer = layui.layer;
+					    $ = layui.$;
+				
+					//监听表单提交：确认保存按钮，提交按钮的lay-filter="saveBtn"
+					form.on('submit(saveBtn)', function(data) {
+						var index = layer.alert(JSON.stringify(data.field), {
+							title: '最终的提交信息'
+						}, function() {
+							// 关闭弹出层
+							layer.close(index);
+				
+							var iframeIndex = parent.layer.getFrameIndex(window.name);
+							parent.layer.close(iframeIndex);
+				
+						});
+						return false;
+					});
+				
+				});
+		</script>
+	</body>
+</html>

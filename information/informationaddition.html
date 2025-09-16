@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo</title>
+  <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+  <link href="../lib/layui-v2.6.3/css/layui.css" rel="stylesheet">
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title">
+			<!-- 修改2：把“添加用户”换成自己的 -->
+			<legend style="font-weight: bold;">资料上传</legend>
+		</fieldset>
+<hr style="margin-top: 10%%;">
+<div class="layui-upload">
+</div>
+ <div class="layui-btn-container" style="margin-top: 50px;text-align: center;">
+	<button type="button" class="layui-btn" id="ID-upload-demo-btn-2">
+		<i class="layui-icon layui-icon-upload"></i> 图片上传
+	</button> 
+   <button type="button" class="layui-btn demo-class-accept" lay-options="{accept: 'file'}">
+     <i class="layui-icon layui-icon-upload"></i> 
+     上传文件
+   </button>
+   <button type="button" class="layui-btn demo-class-accept" lay-options="{
+     accept: 'file',
+     exts: 'zip|rar|7z'
+   }">
+     <i class="layui-icon layui-icon-upload"></i> 
+     上传压缩文件
+   </button>
+   <button type="button" class="layui-btn demo-class-accept" lay-options="{accept: 'video'}">
+     <i class="layui-icon layui-icon-upload"></i> 
+     上传视频
+   </button>
+   <button type="button" class="layui-btn demo-class-accept" lay-options="{accept: 'audio'}">
+     <i class="layui-icon layui-icon-upload"></i>
+     上传音频
+   </button>
+ </div>
+ <div class="layui-upload-drag" style="display: block;margin-top: 50px;" id="ID-upload-demo-drag" >
+   <i class="layui-icon layui-icon-upload"></i> 
+   <div>点击上传，或将文件拖拽到此处</div>
+   <div class="layui-hide" id="ID-upload-demo-preview">
+     <hr> <img src="" alt="上传成功后渲染" style="max-width: 100%">
+   </div>
+ </div>
+  
+<!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
+<script src="../lib/layui-v2.6.3/layui.js"></script>
+<script>
+layui.use(function(){
+  var upload = layui.upload;
+  var layer = layui.layer;
+  var element = layui.element;
+  var $ = layui.$;
+  // 多图片上传
+  upload.render({
+    elem: '#ID-upload-demo-btn-2',
+    url: '', // 实际使用时改成您自己的上传接口即可。
+    multiple: true,
+    before: function(obj){
+      // 预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#upload-demo-preview').append('<img src="'+ result +'" alt="'+ file.name +'" style="width: 90px; height: 90px;">')
+      });
+    },
+    done: function(res){
+      // 上传完毕
+      // …
+    }
+  });
+});
+ 
+</script>  
+ <!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
+ <script src="../lib/layui-v2.6.3/layui.js"></script>
+ <script>
+ layui.use(function(){
+   var upload = layui.upload;
+   var layer = layui.layer;
+   // 渲染
+   upload.render({
+     elem: '.demo-class-accept', // 绑定多个元素
+     url: '', // 此处配置你自己的上传接口即可
+     accept: 'file', // 普通文件
+     done: function(res){
+       layer.msg('上传成功');
+       console.log(res);
+     }
+   });
+ });
+   
+ <!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
+ <script src="../lib/layui-v2.6.3/layui.js"></script>
+ <script>
+ layui.use(function(){
+   var upload = layui.upload;
+   var $ = layui.$;
+   // 渲染
+   upload.render({
+     elem: '#ID-upload-demo-drag',
+     url: '', // 实际使用时改成您自己的上传接口即可。
+     done: function(res){
+       layer.msg('上传成功');
+       $('#ID-upload-demo-preview').removeClass('layui-hide')
+       .find('img').attr('src', res.files.file);
+       console.log(res)
+     }
+   });
+ });
+ </script>
+
+ </script>
+</body>
+</html>

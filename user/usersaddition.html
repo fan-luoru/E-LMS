@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户添加</title>
+		<!-- 修改1：把href里的路径换成自己的 -->
+		<link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+		<style>
+			/* 为带有require类的元素添加红色星号前缀 */
+			.required::before {
+				/* 星号内容 */
+				content: "*";
+					/* 红色 */
+				color: #ff0000;
+				/* 与文字保持一点距离 */
+				margin-right: 4px;
+			/* 星号加粗 */
+				font-weight: bold;				
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset class="layui-elem-field layui-field-title">
+			<!-- 修改2：把“添加用户”换成自己的 -->
+			<legend style="font-weight: bold;">添加用户</legend>
+		</fieldset>
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label required">用户名：</label>
+				<div class="layui-input-block">
+					<input id="username" type="text" name="username" class="layui-input" lay-verify="required"
+					lay-reqtext="用户名不能为空!" placeholder="请输入3-15位字母或数字">
+				</div>
+			</div>	
+				
+			<div class="layui-form-item">
+				<label class="layui-form-label required">密码：</label>
+				<div class="layui-input-block">
+					<input id="password" type="password" name="password" class="layui-input" lay-verify="required"
+					lay-reqtext="密码不能为空!" placeholder="密码需为至少6位字母或数字组成">
+				</div>
+			</div>
+				
+			<div class="layui-form-item">
+				<label class="layui-form-label required">真实姓名：</label>
+				<div class="layui-input-block">
+					<input id="realname" type="text" name="realname" class="layui-input" lay-verify="required"
+					lay-reqtext="姓名不能为空!" placeholder="请输入姓名">
+				</div>
+			</div>
+				
+			<div class="layui-form-item">
+				<label class="layui-form-label required">性别：</label>
+				<div class="layui-input-block">
+					<input type="radio" name="sex" value="男" title="男" checked="">
+					<input type="radio" name="sex" value="女" title="女">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label required">角色：</label>
+				<div class="layui-input-block">
+					<input type="radio" name="role" value="学生" title="学生" checked="">
+					<input type="radio" name="role" value="教师" title="教师">
+					<input type="radio" name="role" value="管理员" title="管理员">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label required">手机号：</label>
+				<div class="layui-input-block">
+					<input id="usertel" type="number" name="usertel" class="layui-input" lay-verify="required"
+					lay-reqtext="手机号不能为空!" placeholder="请输入11位手机号">
+				</div>
+			</div>	
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">QQ：</label>
+				<div class="layui-input-block">
+					<input id="QQ" type="text" name="QQ" class="layui-input" placeholder="请输入QQ号码(选填)">
+				</div>
+			</div>	
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">邮箱：</label>
+				<div class="layui-input-block">
+					<input id="email" type="text" name="email" class="layui-input" placeholder="请输入邮箱号码(选填)">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">备注：</label>
+				<div class="layui-input-block">
+					<textarea   name="remark" class="layui-textarea" placeholder="请输入备注信息(选填)"></textarea>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认保存</button>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../lib/layui-v2.6.3/layui.js">
+			
+		</script>
+		<script>
+			layui.use(['form', 'layer'], function() {
+				var form = layui.form; // 获得form模块
+				var layer = layui.layer; // 获得layer模块
+				$ = layui.$;
+				$("#username").blur(function() {
+					// 取得用户名框中的值
+					var username = $("#username").val();
+					//正则表达式
+					var reg = /^[a-zA-Z0-9_-]{3,15}$/; 
+					if (username.length == 0 || username == null || username == '') {
+						layer.msg('用户名不能为空', {icon: 0}); // 这里的icon可选值0-6，显示出的图标不同
+					} else {
+						if (!reg.test(username)) {
+							layer.msg('用户名必须由3-15个字母或数字构成！', {icon: 2});
+						}
+					}
+				});
+				
+				$("#password").blur(function() {
+						var password = $("#password").val();
+						var reg = /^[a-zA-Z0-9_-]{6}$/; //正则表达式
+						if (password.length == 0 || password == null || password == '') {
+							layer.msg('密码不能为空', {icon: 0});
+						} else {
+							if (!reg.test(password)) {
+								layer.msg('密码格式不对，至少输入6位字母或数字！', {icon: 2});
+						}
+					}
+				});
+				
+				$("#realname").blur(function() {
+						var realname = $("#realname").val();
+						var reg = /^[\u4e00-\u9fa5]{2,15}$/; //正则表达式
+						if (realname.length == 0 || realname == null || realname == '') {
+							layer.msg('姓名不能为空', {icon: 0});
+						} else {
+							if (!reg.test(realname)) {
+								layer.msg('姓名不合法！', {icon: 2});
+						}
+					}
+				});
+				
+				$("#usertel").blur(function() {
+						var usertel = $("#usertel").val();
+						var reg = /^[0-9]{11}$/; //正则表达式
+						if (usertel.length == 0 || usertel == null || usertel == '') {
+							layer.msg('手机号不能为空', {icon: 0});
+						} else {
+							if (!reg.test(usertel)) {
+								layer.msg('手机号不合法！', {icon: 2});
+						}
+					}
+				});
+				
+			});
+				
+				layui.use(['form'], function() {
+					var form = layui.form;
+					  layer = layui.layer;
+					    $ = layui.$;
+				
+					//监听表单提交：确认保存按钮，提交按钮的lay-filter="saveBtn"
+					form.on('submit(saveBtn)', function(data) {
+						var index = layer.alert(JSON.stringify(data.field), {
+							title: '最终的提交信息'
+						}, function() {
+							// 关闭弹出层
+							layer.close(index);
+				
+							var iframeIndex = parent.layer.getFrameIndex(window.name);
+							parent.layer.close(iframeIndex);
+				
+						});
+						return false;
+					});
+				
+				});
+		</script>
+	</body>
+</html>

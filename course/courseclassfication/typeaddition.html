@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>分类添加</title>
+		<!-- 修改1：把href里的路径换成自己的 -->
+		<link rel="stylesheet" href="../../lib/layui-v2.6.3/css/layui.css" media="all">
+		<style>
+			/* 为带有require类的元素添加红色星号前缀 */
+			.required::before {
+				/* 星号内容 */
+				content: "*";
+					/* 红色 */
+				color: #ff0000;
+				/* 与文字保持一点距离 */
+				margin-right: 4px;
+			/* 星号加粗 */
+				font-weight: bold;				
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset class="layui-elem-field layui-field-title">
+			<!-- 修改2：把“添加用户”换成自己的 -->
+			<legend style="font-weight: bold;">分类添加</legend>
+		</fieldset>
+		<div class="layui-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label required">类别编号：</label>
+				<div class="layui-input-block">
+					<input id="typeid" type="number" name="typeid" class="layui-input" lay-verify="required"
+					lay-reqtext="类别编号不能为空!" placeholder="请输入类别编号">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label required">类别名称：</label>
+				<div class="layui-input-block">
+					<input id="typename" type="text" name="typename" class="layui-input" lay-verify="required"
+					lay-reqtext="类别名称不能为空!" placeholder="请输入类别名称">
+				</div>
+			</div>	
+				
+			<div class="layui-form-item">
+				<label class="layui-form-label required">负责人：</label>
+				<div class="layui-input-block">
+					<input id="director" type="text" name="director" class="layui-input" lay-verify="required"
+					lay-reqtext="类别负责人不能为空!" placeholder="请输入类别负责人">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">类别备注：</label>
+				<div class="layui-input-block">
+					<textarea   name="remark" class="layui-textarea" placeholder="请输入备注信息(选填)"></textarea>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认创建</button>
+				</div>
+			</div>
+			
+		</div>
+		<script src="../../lib/layui-v2.6.3/layui.js">
+			
+		</script>
+		<script>
+			layui.use(['form', 'layer'], function() {
+				var form = layui.form; // 获得form模块
+				var layer = layui.layer; // 获得layer模块
+				$ = layui.$;
+				$("#typeid").blur(function() {
+					// 取得用户名框中的值
+					var typeid = $("#typeid").val();
+					//正则表达式
+					if (typeid.length == 0 || typeid == null || typeid == '') {
+						layer.msg('编号不能为空', {icon: 0}); // 这里的icon可选值0-6，显示出的图标不同
+					}
+				});
+				
+				$("#typename").blur(function() {
+						var typename = $("#typename").val();
+						if (typename.length == 0 || typename == null || typename == '') {
+							layer.msg('类别名称不能为空', {icon: 0});
+							}
+				});
+				$("#director").blur(function() {
+						var director = $("#director").val();
+						if (director.length == 0 || director == null || director == '') {
+							layer.msg('类别负责人不能为空', {icon: 0});
+							}
+				});
+				
+			});
+				
+				layui.use(['form'], function() {
+					var form = layui.form;
+					  layer = layui.layer;
+					    $ = layui.$;
+				
+					//监听表单提交：确认保存按钮，提交按钮的lay-filter="saveBtn"
+					form.on('submit(saveBtn)', function(data) {
+						var index = layer.alert(JSON.stringify(data.field), {
+							title: '最终的提交信息'
+						}, function() {
+							// 关闭弹出层
+							layer.close(index);
+				
+							var iframeIndex = parent.layer.getFrameIndex(window.name);
+							parent.layer.close(iframeIndex);
+				
+						});
+						return false;
+					});
+				
+				});
+		</script>
+	</body>
+</html>

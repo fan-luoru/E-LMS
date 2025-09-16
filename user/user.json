@@ -1,0 +1,103 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "username": "诗仙",
+      "realname": "李白",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "01234567890"
+    },
+    {
+      "username": "诗圣",
+      "realname": "杜甫",
+      "sex": "男",
+      "role": "学生",
+      "usertel": "12345678900"
+    },{
+      "username": "阿蛮",
+      "realname": "曹操",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "23456789001"
+    },{
+      "username": "诗仙",
+      "realname": "李白",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "01234567890"
+    },
+    {
+      "username": "诗圣",
+      "realname": "杜甫",
+      "sex": "男",
+      "role": "学生",
+      "usertel": "12345678900"
+    },{
+      "username": "阿蛮",
+      "realname": "曹操",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "23456789001"
+    },{
+      "username": "诗仙",
+      "realname": "李白",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "01234567890"
+    },
+    {
+      "username": "诗圣",
+      "realname": "杜甫",
+      "sex": "男",
+      "role": "学生",
+      "usertel": "12345678900"
+    },{
+      "username": "阿蛮",
+      "realname": "曹操",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "23456789001"
+    },{
+      "username": "诗仙",
+      "realname": "李白",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "01234567890"
+    },
+    {
+      "username": "诗圣",
+      "realname": "杜甫",
+      "sex": "男",
+      "role": "学生",
+      "usertel": "12345678900"
+    },{
+      "username": "阿蛮",
+      "realname": "曹操",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "23456789001"
+    },{
+      "username": "诗仙",
+      "realname": "李白",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "01234567890"
+    },
+    {
+      "username": "诗圣",
+      "realname": "杜甫",
+      "sex": "男",
+      "role": "学生",
+      "usertel": "12345678900"
+    },{
+      "username": "阿蛮",
+      "realname": "曹操",
+      "sex": "男",
+      "role": "教师",
+      "usertel": "23456789001"
+    }
+  ]
+}

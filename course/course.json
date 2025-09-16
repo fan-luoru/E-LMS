@@ -1,0 +1,95 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "coursename": "语文",
+      "teacher": "张三",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "吃屎娃嘞"
+    },{
+      "coursename": "数学",
+      "teacher": "李四",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    },{
+      "coursename": "英语",
+      "teacher": "王五",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    },{
+      "coursename": "思想教育",
+      "teacher": "小红",
+      "type": "通识课程",
+      "time": "1h",
+      "remark": "跟着蜜蜂找花朵，跟着苍蝇找厕所"
+    },{
+      "coursename": "语文",
+      "teacher": "张三",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "吃屎娃嘞"
+    },
+    {
+      "coursename": "数学",
+      "teacher": "李四",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    },{
+      "coursename": "英语",
+      "teacher": "王五",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    },{
+      "coursename": "思想教育",
+      "teacher": "小红",
+      "type": "通识课程",
+      "time": "1h",
+      "remark": "跟着蜜蜂找花朵，跟着苍蝇找厕所"
+    },{
+      "coursename": "语文",
+      "teacher": "张三",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "吃屎娃嘞"
+    },
+    {
+      "coursename": "数学",
+      "teacher": "李四",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    },{
+      "coursename": "英语",
+      "teacher": "王五",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    },{
+      "coursename": "思想教育",
+      "teacher": "小红",
+      "type": "通识课程",
+      "time": "1h",
+      "remark": "跟着蜜蜂找花朵，跟着苍蝇找厕所"
+    },{
+      "coursename": "语文",
+      "teacher": "张三",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "吃屎娃嘞"
+    },
+    {
+      "coursename": "数学",
+      "teacher": "李四",
+      "type": "基础课程",
+      "time": "45min",
+      "remark": "无"
+    }
+  ]
+}

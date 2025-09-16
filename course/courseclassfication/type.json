@@ -1,0 +1,33 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "typeid": "00001",
+      "typename": "专业课程",
+      "director": "小美",
+      "remark": "无"
+    },{
+      "typeid": "00002",
+      "typename": "通识课程",
+      "director": "小帅",
+      "remark": "无"
+    },{
+      "typeid": "00003",
+      "typename": "基础课程",
+      "director": "小白",
+      "remark": "无"
+    },{
+      "typeid": "00004",
+      "typename": "学科交叉课程课程",
+      "director": "小吴",
+      "remark": "无"
+    },{
+      "typeid": "00005",
+      "typename": "兴趣课程",
+      "director": "小芬",
+      "remark": "无"
+    }
+  ]
+}

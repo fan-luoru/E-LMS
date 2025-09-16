@@ -1,0 +1,64 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "教师",
+      "noticegrade": "基础通知",
+      "noticecontent": "新资源上传成功"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    },{
+      "noticeobject": "管理员",
+      "noticegrade": "基础通知",
+      "noticecontent": "系统更新维护"
+    }
+  ]
+}

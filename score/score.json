@@ -1,0 +1,68 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    },{
+      "studentname": "Mark",
+      "studetnumber": "2413043009",
+      "coursename": "高等数学",
+      "scoretype": "考试成绩",
+      "score": "95"
+    }
+  ]
+}
